@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+//rotte CRUD per comics
+Route::get('/comics', 'comicController@index')->name('comics.index');
+Route::get('/comics/create', 'comicController@create')->name('comics.create');
+Route::get('/comics/{comic}', 'comicController@show')->name('comics.show');

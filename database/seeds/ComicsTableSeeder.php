@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ComicSeeder extends Seeder
+class ComicsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
