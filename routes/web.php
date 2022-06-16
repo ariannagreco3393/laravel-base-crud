@@ -21,4 +21,5 @@ Route::get('/', function () {
 //rotte CRUD per comics
 Route::get('/comics', 'comicController@index')->name('comics.index');
 Route::get('/comics/create', 'comicController@create')->name('comics.create');
+Route::post('/comics', 'comicController@store')->name('comics.store');
 Route::get('/comics/{comic}', 'comicController@show')->name('comics.show');
