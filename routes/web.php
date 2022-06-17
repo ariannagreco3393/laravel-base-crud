@@ -19,7 +19,13 @@ Route::get('/', function () {
 })->name('home');
 
 //rotte CRUD per comics
-Route::get('/comics', 'comicController@index')->name('comics.index');
+/* Route::get('/comics', 'comicController@index')->name('comics.index');
 Route::get('/comics/create', 'comicController@create')->name('comics.create');
 Route::post('/comics', 'comicController@store')->name('comics.store');
 Route::get('/comics/{comic}', 'comicController@show')->name('comics.show');
+Route::get('/comics/{comic}/edit', 'comicController@edit')->name('comics.edit');
+Route::put('/comics/{comic}', 'comicController@update')->name('comics.update');
+Route::delete('/comics/{comic}', 'comicController@destroy')->name('comics.destroy'); */
+
+
+Route::resource('comics', ComicController::class);
