@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <div class="container">
     <div class="heading d-flex justify-content-between align-items-center">
         <h1 class="p-5">Comics</h1>
