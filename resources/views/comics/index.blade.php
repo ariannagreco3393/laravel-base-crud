@@ -8,7 +8,7 @@
     <div class="heading d-flex justify-content-between align-items-center">
         <h1 class="p-5">Comics</h1>
         <div>
-            <a class="btn btn-primary d-block" href="{{route('comics.create')}}">Create comic</a>
+            <a class="btn btn-secondary d-block" href="{{route('comics.create')}}">Create comic</a>
         </div>
     </div>
 
@@ -36,8 +36,8 @@
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->type}}</td>
                 <td class="d-flex">
-                    <button class="btn btn-success mx-2" href="{{route('comics.show', $comic->id)}}">View</button>
-                    <button class="btn btn-primary mx-2" href="{{route('comics.edit', $comic->id)}}">Edit</button>
+                    <a class="btn btn-success mx-2" href="{{route('comics.show', $comic->id)}}">View</a>
+                    <a class="btn btn-primary mx-2" href="{{route('comics.edit', $comic->id)}}">Edit</a>
                     <form action="{{route('comics.destroy', $comic->id)}}" method="post">
                         @csrf
                         @method('DELETE')
