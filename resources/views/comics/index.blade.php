@@ -20,24 +20,28 @@
                 <th>thumb</th>
                 <th>price</th>
                 <th>series</th>
-                <th>sale_date</th>
+                <th>sale date</th>
                 <th>type</th>
             </tr>
         </thead>
         <tbody>
 
-            @foreach($comics as $comic)
+            @forelse($comics as $comic)
             <tr>
                 <td scope="row">{{$comic->id}}</td>
                 <td>{{$comic->title}}</td>
-                <td><img width="50" src="{{$comic->thumb}}" alt=""></td>
+                <td><img width="50" src="{{$comic->thumb}}" alt="{{$comic->title}}"></td>
                 <td>{{$comic->price}}</td>
                 <td>{{$comic->series}}</td>
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->type}}</td>
                 <td><a href="{{route('comics.show', $comic->id)}}">View</a>- Edit - Delete</td>
             </tr>
-            @endforeach
+            @empty
+            <tr>
+                <td>Nothing here!</td>
+            </tr>
+            @endforelse
         </tbody>
     </table>
 

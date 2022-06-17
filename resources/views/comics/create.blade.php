@@ -5,7 +5,7 @@
 <div class="container">
     <h1> Create a new comic</h1>
     <!-- Puntare il form alla rotta comic store -->
-    <form action="{{route('comics.store')}}" method="comic">
+    <form action="{{route('comics.store')}}" method="post">
         @csrf
 
         <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <label for="price">price</label>
-            <input type="text" name="price" id="price" class="form-control" placeholder="inserisci comic price" aria-describedby="priceHelper">
+            <input type="number" step="0.01" name="price" id="price" class="form-control" placeholder="inserisci comic price" aria-describedby="priceHelper">
             <small id="priceHelper" class="text-muted">Type the comic price here</small>
         </div>
         <div class="form-group">
@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label for="sale_date">sale_date</label>
-            <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="inserisci comic sale_date" aria-describedby="sale_dateHelper">
+            <input type="date" name="sale_date" id="sale_date" class="form-control" placeholder="inserisci comic sale_date" aria-describedby="sale_dateHelper">
             <small id="sale_dateHelper" class="text-muted">Type the comic sale_date here</small>
         </div>
         <div class="form-group">
@@ -42,11 +42,7 @@
             <input type="text" name="type" id="type" class="form-control" placeholder="inserisci comic type" aria-describedby="typeHelper">
             <small id="typeHelper" class="text-muted">Type the comic type here</small>
         </div>
-
         <button type="submit" class="btn btn-primary">Add comic</button>
-
-
-
     </form>
 </div>
 @endsection

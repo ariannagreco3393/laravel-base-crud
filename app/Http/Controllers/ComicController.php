@@ -38,9 +38,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['price'] = floatval(str_replace(',','.',$data['price']));
+        Comic::create($data);
+        return redirect()->route('comics.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -49,7 +51,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        return view('comics.show',compact('comic'));
     }
 
     /**
