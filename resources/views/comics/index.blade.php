@@ -35,9 +35,9 @@
                 <td>{{$comic->series}}</td>
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->type}}</td>
-                <td>
-                    <a href="{{route('comics.show', $comic->id)}}">View</a>
-                    <a href="{{route('comics.edit', $comic->id)}}">Edit</a>
+                <td class="d-flex">
+                    <button class="btn btn-success mx-2" href="{{route('comics.show', $comic->id)}}">View</button>
+                    <button class="btn btn-primary mx-2" href="{{route('comics.edit', $comic->id)}}">Edit</button>
                     <form action="{{route('comics.destroy', $comic->id)}}" method="post">
                         @csrf
                         @method('DELETE')
@@ -54,6 +54,5 @@
     </table>
 
 </div>
-
 
 @endsection
